@@ -22,8 +22,8 @@ project "EngineLib"
    includedirs
    {
      VulkanSDK .. "/Include",
+     "Engine/**.h",
      "Engine/pch",
-     "Engine",
    }
 
    filter "system:windows"
@@ -60,7 +60,7 @@ project "EngineLib"
       defines { "NDEBUG" }
       optimize "On"
 
-   pchheader "Engine/pch/pch.hpp"
+   pchheader "pch/pch.hpp"
    pchsource "Engine/pch/pch.cpp"
 
 project "Sandbox"

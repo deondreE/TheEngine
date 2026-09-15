@@ -16,7 +16,10 @@
         "github.copilot.chat.enabled": false,
 
         "C_Cpp.default.cppStandard": "c++23",
-        "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+        "C_Cpp.default.intelliSenseMode": "macos-gcc-arm64",
+        "C_Cpp.default.includePath": [
+            "${workspaceFolder}/**"
+        ],
 
         "files.exclude": {
             "**/build/bin": true,
