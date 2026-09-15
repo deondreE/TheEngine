@@ -11,6 +11,14 @@
 *.sln.docstates
 *.env
 
+*.xcworkspace
+*.xcodeproj
+*.vcxproj
+*.vcxproj.filters
+*.slnx
+*.make
+Makefile
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

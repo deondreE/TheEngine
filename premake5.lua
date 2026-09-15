@@ -1,5 +1,9 @@
 VulkanSDK = os.getenv("VULKAN_SDK")
 
+if not VulkanSDK then
+   error("VULKAN_SDK environment variable is not set")
+end
+
 workspace "TheEngine"
    configurations { "Debug", "Release" }
    language "C++"
@@ -15,18 +19,39 @@ project "EngineLib"
    
    files { "Engine/**.hpp", "Engine/**.cpp" }
 
-   links 
-   {
-    "%VULKAN_SDK%\\**.lib"
-   }
-
    includedirs
    {
-     "%VULKAN_SDK%\\Include",
+     VulkanSDK .. "/Include",
      "Engine/pch",
-     "."
+     "Engine",
    }
-   
+
+   filter "system:windows"
+      architecture "x86_64"
+
+      libdirs
+      {
+         VulkanSDK .. "/Lib"
+      }
+
+      links
+      {
+         "vulkan-1"
+      }
+   filter "system:macosx"
+      architecture "arm64"
+
+      libdirs
+      {
+         VulkanSDK .. "/lib"
+      }
+
+      links
+      {
+         "vulkan"
+      }
+   filter {}
+
    filter "configurations:Debug"
       defines { "DEBUG" }
       symbols "On"

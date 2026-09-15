@@ -1,0 +1,30 @@
+{
+    "folders": [
+        {
+            "name": "TheEngine",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "github.copilot.enable": {
+            "*": false,
+            "plaintext": false,
+            "markdown": false,
+            "scminput": false
+        },
+        "github.copilot.editor.enableAutoCompletions": false,
+        "github.copilot.chat.enabled": false,
+
+        "C_Cpp.default.cppStandard": "c++23",
+        "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+
+        "files.exclude": {
+            "**/build/bin": true,
+            "**/build/bin-int": true
+        },
+
+        "search.exclude": {
+            "**/build": true
+        }
+    }
+}
